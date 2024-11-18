@@ -7,19 +7,16 @@ resource "aws_instance" "example" {
   instance_type = var.instance_type
 
   tags = {
-    Name = "SimpleInstance"
+    Name = "TerraformExampleInstance"
   }
 }
 
-variable "aws_region" {
-  default = "ap-south-1"
+# Output the instance's public IP address
+output "instance_public_ip" {
+  value = aws_instance.example.public_ip
 }
 
-variable "ami_id" {
-  default = "ami-086991efecfeed1f4"
+# Output the instance's ID
+output "instance_id" {
+  value = aws_instance.example.id
 }
-
-variable "instance_type" {
-  default = "t2.micro"
-}
-

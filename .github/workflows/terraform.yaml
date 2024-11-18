@@ -30,7 +30,9 @@ jobs:
 
       - name: Plan Terraform
         run: |
-          terraform plan
+          terraform plan -var="aws_region=${{ secrets.AWS_REGION }}" \
+                   -var="ami_id=${{ secrets.AMI_ID }}" \
+                   -var="instance_type=${{ secrets.INSTANCE_TYPE }}"
 
 
       - name: Apply Terraform
