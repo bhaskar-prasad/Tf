@@ -12,3 +12,15 @@ variable "instance_type" {
   description = "The instance type to use for the EC2 instance"
   type        = string
 }
+
+variable "aws_access_key" {
+  description = "The AWS access key for authentication"
+  type        = string
+  sensitive   = true
+}
+
+variable "aws_secret_key" {
+  description = "The AWS secret access key for authentication"
+  type        = string
+  sensitive   = true
+}
