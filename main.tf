@@ -14,7 +14,6 @@ resource "aws_instance" "example" {
   }
 }
 
-# Output the instance's public IP address
 output "instance_public_ip" {
   value = aws_instance.example.public_ip
 }
